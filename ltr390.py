@@ -1,5 +1,9 @@
+# DFRobot SEN0540 LTR390 UV Sensor library
+# by Toby Corkindale https://github.com/TJC/
+# Released under the Apache 2.0 license.
+#
 # This library is for the DFRobot LTR390 UV Sensor.
-# It is not compatible with regular LTR390 chips -- I don't know why it is
+# It is NOT compatible with regular LTR390 chips -- I don't know why it is
 # different.
 # Most notably, when writing to a register, it has to be sent with a +5 offset
 # to the address. The data written must be two bytes, with the second byte
