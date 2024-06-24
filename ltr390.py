@@ -95,9 +95,9 @@ class LTR390:
         self.i2c.writeto_mem(DEV_ADDRESS, REG_GAIN + 5, bytes([gainLevel, 0]))
 
     def uvs(self):
-        buffer = self.i2c.readfrom_mem(DEV_ADDRESS, REG_UVS_DATA_LOW, 2)
-        return buffer[0] << 8 + buffer[1]
+        buffer = self.i2c.readfrom_mem(DEV_ADDRESS, REG_UVS_DATA_LOW, 4)
+        return (buffer[3] << 24) + (buffer[2] << 16) + (buffer[1] << 8) + buffer[0]
 
     def als(self):
-        buffer = self.i2c.readfrom_mem(DEV_ADDRESS, REG_ALS_DATA_LOW, 2)
-        return buffer[0] << 8 + buffer[1]
+        buffer = self.i2c.readfrom_mem(DEV_ADDRESS, REG_ALS_DATA_LOW, 4)
+        return (buffer[3] << 24) + (buffer[2] << 16) + (buffer[1] << 8) + buffer[0]
