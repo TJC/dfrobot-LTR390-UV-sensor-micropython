@@ -49,12 +49,13 @@ eGain6 = const(2)  # Gain of 6
 eGain9 = const(3)  # Gain of 9
 eGain18 = const(4)  # Gain of 18
 
-e20bit = const(0)  # 20-bit data
-e19bit = const(16)  # 19-bit data
-e18bit = const(32)  # 18-bit data
-e17bit = const(48)  # 17-bit data
-e16bit = const(64)  # 16-bit data
-e13bit = const(80)  # 13-bit data
+# Note when selecting resolution and time frames -- the higher the
+# resolution, the longer the minimum latency.
+e20bit = const(0)  # 20-bit data, min time 400ms
+e19bit = const(16)  # 19-bit data, min time 200ms
+e18bit = const(32)  # 18-bit data, min time 100ms
+e17bit = const(48)  # 17-bit data, min time 50ms
+e16bit = const(64)  # 16-bit data, min time 25ms
 
 e25ms = const(0)  # Sampling time of 25ms
 e50ms = const(1)  # Sampling time of 50ms
